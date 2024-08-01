@@ -13,7 +13,7 @@ const searchButton = document.getElementById("search").querySelector("button");
 const inputBox = document.getElementById("search").querySelector("input");
 const listItems = document.querySelectorAll("li");
 
-const showProducts = (products) => {
+const renderProducts = (products) => {
   mainContent.innerHTML = "";
 
   products.forEach((product) => {
@@ -53,7 +53,7 @@ const init = async () => {
   }
 
   allProducts = await getData("products");
-  showProducts(allProducts);
+  renderProducts(allProducts);
   console.log(allProducts);
 };
 
@@ -69,7 +69,7 @@ const filterProducts = () => {
     }
   });
 
-  showProducts(filteredProducts);
+  renderProducts(filteredProducts);
 };
 
 const searchHandler = () => {
